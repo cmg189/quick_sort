@@ -1,2 +1,2 @@
 # sorting
-Collection of sorting algorithms 
+This repo contains common sorting algorithms 

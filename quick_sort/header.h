@@ -2,9 +2,12 @@
 #include <vector>
 using namespace std;
 
-// gets input from user and returns an unsorted vector
+// returns a vector initalized by user
 vector<int> user_data();
 
+// recursivly sorts and returns vector
+// takes an unsorted vector, starting index, and ending index
+vector<int> quick_sort(vector<int> data, int start, int end);
 
 vector<int> user_data(){
 
@@ -30,6 +33,12 @@ vector<int> user_data(){
 		cout << data.at(i) << " ";
 	}
 	cout << "\n\n";
+
+	return data;
+}
+
+
+vector<int> quick_sort(vector<int> data, int start, int end){
 
 	return data;
 }

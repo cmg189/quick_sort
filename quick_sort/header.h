@@ -7,7 +7,9 @@ vector<int> user_data();
 
 // recursivly sorts and returns vector
 // takes an unsorted vector, starting index, and ending index
-vector<int> quick_sort(vector<int> data, int start, int end);
+vector<int> quick_sort(vector<int> data, int bottom, int top);
+
+int partition(vector<int> data, int pivot_element, int bottom, int top);
 
 vector<int> user_data(){
 
@@ -38,7 +40,24 @@ vector<int> user_data(){
 }
 
 
-vector<int> quick_sort(vector<int> data, int start, int end){
+vector<int> quick_sort(vector<int> data, int bottom, int top){
+
+	// base case
+	if(data.at(start) >= data.at(end)){
+		return data;
+	}
+
+	int pivot_index = (start + end) / 2;
+	//int pivot_index = start + ( (end - start) / 2 );   // safer calculation of pivot index protects from overflow
+	int pivot_element = data.at(pivot_index);
+
+	int partition_index = partition(data, pivot_element, bottom, top);
 
 	return data;
+}
+
+
+int partition(vector<int> data, int pivot_element, int bottom, int top){
+
+	return bottom;
 }

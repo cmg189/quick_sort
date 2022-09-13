@@ -1,7 +1,7 @@
 #include "header.h"
 
 int main(){
-	cout << "\nQuick Sort Algorithm\n";
+	cout << "\nQuick Sort Algorithm\n\n";
 
 	// comment out for testing
 	//vector<int> data = user_data();
@@ -10,7 +10,7 @@ int main(){
 	//vector<int> sorted_data = quick_sort(data, starting_index, ending_index);
 
 	// testing purposes
-	vector<int> test_data{12, 99, 100, 32, 57, 18, 1, 56, 83, 44, 7};
+	vector<int> test_data{12, 99, 100, 32, 57, 18, 1, 56, 83, 44, 13};
 	int starting_index = 0;
 	int ending_index = test_data.size() -1;
 	vector<int> sorted_data = quick_sort(test_data, starting_index, ending_index);

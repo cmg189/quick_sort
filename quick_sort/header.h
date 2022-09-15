@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+
+// used to return multiple data points
 class Flag {
 	public:
 		Flag(int index, bool flag);	// constructor
@@ -14,21 +16,24 @@ class Flag {
 
 	private:
 		int partition_index;
-		bool partition_flag;				// used when
+		bool partition_flag;				// true when initial bottom half is done sorting
 };
 
+// constructor
 Flag:: Flag(int index, bool flag){
 	this-> partition_index = index;
 	this-> partition_flag = flag;
 	return;
 }
 
+// accessor and mutator
 void Flag:: set_index(int index){
 	this->partition_index = index;
 	return;
 }
 int Flag:: get_index(){ return partition_index; }
 
+// accessor and mutator
 void Flag:: set_flag(bool flag){
 	this->partition_flag = flag;
 	return;
@@ -43,14 +48,13 @@ vector<int> user_data();
 // takes an unsorted vector, starting index, and ending index
 vector<int> quick_sort(vector<int> data, int bottom, int top);
 
-// returns partition index to continue sorting
+// returns partition index and flag to continue sorting
 Flag partition(vector<int> &data, int bottom, int top);
 
-// swaps two elements
+// swaps two elements data[bottom_compare] and data[top_compare]
 vector<int> swap(vector<int> data, int bottom_compare, int top_compare);
 
 vector<int> user_data(){
-
 	cout << "\nEnter integers to be sorted\n" << "When finished enter -999\n\n";
 
 	int user_num;
@@ -79,18 +83,17 @@ vector<int> user_data(){
 
 vector<int> quick_sort(vector<int> data, int bottom, int top){
 
-
+	// find partition index and recursivly sort bottom half and top half
 	if(bottom < top){
-		Flag control = partition(data, bottom, top);
+		Flag control = partition(data, bottom, top);		// returns partition index and flag to sort top half
 
-		data = quick_sort(data, bottom, control.get_index());		// sorting bottom half of vector
+		data = quick_sort(data, bottom, control.get_index());		// sorting bottom half
 		//cout << "pi " << control.get_index()+1 << " top " << top << endl;
-		data = quick_sort(data, control.get_index() +1, top);		// sorting top half of the vector
-
-
+		data = quick_sort(data, control.get_index() +1, top);		// sorting top half
 	}
 
 	//for(int i=0; i< data.size(); i++){ cout << data.at(i) << " "; } cout << endl;
+	// return sorted data
 	return data;
 }
 
@@ -102,7 +105,6 @@ Flag partition(vector<int> &data, int bottom, int top){
 	int top_compare = top;
 	int bottom_compare = bottom; // bottom is the pivot index
 	//cout << "pivot " << data[bottom]  <<" bc " << bottom_compare << " tc " << top_compare << endl;
-
 
 	// loop and swap until top_compare itterates past bottom_compare
 	while(bottom_compare < top_compare){

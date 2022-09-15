@@ -11,7 +11,6 @@ int main(){
 	// sorting data
 	vector<int> sorted_data = quick_sort(data, starting_index, ending_index);
 
-
 	// output sorted data
 	cout << "Sorted:\n";
 	for(int i=0; i< sorted_data.size(); i++){ cout << sorted_data.at(i) << " "; }

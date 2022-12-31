@@ -130,7 +130,7 @@ vector<int> swap(vector<int> data, int bottom_compare, int top_compare)
 
 
 
-### Classes <a name="class"></a>
+## Classes <a name="class"></a>
 
 ``` cpp
 class Flag
@@ -165,6 +165,6 @@ class Flag
 	`bool partition_flag` Indicates when sorting will stop
 
 
-### Resources <a name="resources"></a>
+## Resources <a name="resources"></a>
 
 To learn more about the implementation of this algorithm consider watching this informational [video](https://www.youtube.com/watch?v=7h1s2SojIRw)

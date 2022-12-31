@@ -1,12 +1,33 @@
-
 ## Quick Sort
-This repository contains the implementation of the quick sort algorithm in c plus plus
 
-### Description
+This repository contains an implementation of the quick sort algorithm in C++
 
-Quick sort has been described as a "divide and conquer" algorithm due to splitting up problems into smaller subproblems, then sorting these subproblems.
+### Table of Contents
 
-### Compile and Execute
+1. [Description](#description)
+2. [Program Output](#output)
+3. [Compile and Execution](#exe)
+4. [Function Headers](#function)
+5. [Classes](#class)
+6. [Resources](#resources)
+
+### Description <a name="description"></a>
+
+Quick sort has been described as a "divide and conquer" algorithm due to splitting up problems into smaller subproblems, then sorting these subproblems. The quick sort algorithm uses two arrays to hold elements less than, and greater than or equal to, the pivot element. These arrays are further broken up into sub-arrays to be sorted and eventually reconstructed together to create the final sorted array. The time complexity is as follows:
+
+- Average case: 0(nlogn)
+
+- Worst case: 0(n^2)
+
+- Best case: 0(nlogn)
+
+For an in-depth explanation of this algorithmic analysis visit: [opengenus.org](https://iq.opengenus.org/time-and-space-complexity-of-quick-sort/)
+
+## Program Output <a name="output"></a>
+
+
+
+### Compile and Execute <a name="exe"></a>
 
 - Windows:
 
@@ -21,18 +42,15 @@ Quick sort has been described as a "divide and conquer" algorithm due to splitti
 	To execute run the command: `./quick_sort.exe`
 
 
-### Time Complexity
-- Average case: 0(nlogn)
+### Function Headers <a name="function"></a>
 
-- Worst case: 0(n^2)
+``` cpp
+vector<int> user_data()
+```
 
-- Best case: 0(nlogn)
+- Description:
 
-For an in-depth explanation of this algorithmic analysis visit: [opengenus.org](https://iq.opengenus.org/time-and-space-complexity-of-quick-sort/)
-
-### Function Headers
-
-`user_data()`
+	Prompts user to initialize a vector of integers to be sorted
 
 - Parameters:
 
@@ -40,70 +58,80 @@ For an in-depth explanation of this algorithmic analysis visit: [opengenus.org](
 
 - Return:
 
-	a vector<int> representing data initialized by user
+	`vector<int> data` representing integers to be sorted
+
+
+
+``` cpp
+vector<int> quick_sort(vector<int> data, int bottom, int top)
+```
 
 - Description:
 
-	This function prompts the user to enter integers to be sorted
-
-`quick_sort()`
+	Beginning of recursive calls that sorts the data
 
 - Parameters:
 
-	- vector\<int\> representing unsorted data initialized by user
+	- `vector<int> data` Represents unsorted data initialized by user
 
-	- int representing lower bound of vector to be sorted
+	- `int bottom` Represents lower bound of vector to be sorted
 
-	- int representing upper bound of vector to be sorted
+	- `int top` Represents upper bound of vector to be sorted
 
 - Return:
 
-	vector\<int\> representing the sorted data
+	`vector<int> data` Represents the sorted data
+
+
+``` cpp
+Flag partition(vector<int> &data, int bottom, int top)
+```
 
 - Description:
 
-	This function begins the recursive calls that sorts the data
-
-`partition()`
+	Sorts integers by swapping their positions in the subset of data from the lower to upper bound. Once no more integers can be swapped it finds and returns the next partition index.
 
 - Parameters:
 
-	- vector\<int\> passed by reference representing a subset of the data to be sorted
+	- `vector<int> &data` Represents a subset of the data to be sorted (passed by reference)
 
-	- int representing lower bound of data to be sorted
+	- `int bottom` Represents lower bound of data to be sorted
 
-	- int representing upper bound of data to be sorted
-
-- Return:
-
-	class Flag containing the sorted subset of the data and a boolean representing a control flag
-
-- Description:
-
-	This function sorts integers by swapping their positions in the subset of data from the lower to upper bound. Once no more integers can be swapped it finds and returns the next partition index
-
-
-`swap()`
-
-- Parameters
-
-	- vector\<int\> representing the data
-
-	- int representing element to be swapped
-
-	- int representing element to be swapped
+	- `int top` Represents upper bound of data to be sorted
 
 - Return:
 
-	vector\<int\> containing data after elements have been swapped
+	`Flag control` Object of class Flag containing the sorted subset of the data and a boolean representing a control flag
 
+
+
+
+``` cpp
+vector<int> swap(vector<int> data, int bottom_compare, int top_compare)
+```
 - Description:
 
 	This function takes in the data and two integers to be swapped
 
-### Class Headers
+- Parameters
 
-`Flag`
+	- `vector<int> data` Represents the data being sorted
+
+	- `int bottom_compare` Represents element to be swapped
+
+	- `int top_compare` Represents element to be swapped
+
+- Return:
+
+	`vector<int> data` Contains data after elements have been swapped
+
+
+
+### Classes <a name="class"></a>
+
+``` cpp
+class Flag
+```
 
 - Description:
 
@@ -113,26 +141,27 @@ For an in-depth explanation of this algorithmic analysis visit: [opengenus.org](
 
 	- Constructors:
 
-	`flag(int, int)`
+	`Flag(int index, int flag)` Initializes object with values passed in
 
 	- Accessors:
 
-	`int get_index()`
+	`int get_index()` Returns partition_index
 
-	`int get_flag()`
+	`int get_flag()` Returns partition_flag
 
 	- Mutators:
 
-	`void set_index(int)`
+	`void set_index(int)` Initializes partition_index
 
-	`void set_flag(bool)`
+	`void set_flag(bool)` Initializes partition_flag
 
 - Private member variables:
 
-	- `int partition_index`
+	`int partition_index` Represents where the partitioning takes place
 
-	- `bool partition_flag`
+	`bool partition_flag` Indicates when sorting will stop
 
-### Resources
 
-To learn more about the implementation of this algorithm consider watching this informational [video](https://www.youtube.com/watch?v=7h1s2SojIRw)
+### Resources <a name="resources"></a>
+
+	To learn more about the implementation of this algorithm consider watching this informational [video](https://www.youtube.com/watch?v=7h1s2SojIRw)

@@ -27,21 +27,21 @@ For an in-depth explanation of this algorithmic analysis visit: [opengenus.org](
 
 ## Program Output <a name="output"></a>
 
-
+<img src="output.PNG" width="400" height="300">
 
 ### Compile and Execute <a name="exe"></a>
 
 - Windows:
 
-	To compile run the command: `g++ main.cpp -o quick_sort`
+	To compile run the command: `g++ main.cpp headers.cpp -o quick`
 
-	To execute run the command: `quick_sort.exe`
+	To execute run the command: `quick.exe`
 
 - Linux / Mac OS:
 
-	To compile run the command: `g++ main.cpp -o quick_sort`
+	To compile run the command: `g++ main.cpp headers.cpp -o quick`
 
-	To execute run the command: `./quick_sort`
+	To execute run the command: `./quick`
 
 
 ## Function Headers <a name="function"></a>
@@ -128,7 +128,23 @@ vector<int> swap(vector<int> data, int bottom_compare, int top_compare)
 
 	`vector<int> data` Contains data after elements have been swapped
 
+---
 
+``` cpp
+void output_data(vector<int> data)
+```
+
+- Description:
+
+	Outputs sorted data
+
+- Parameters:
+
+	`vector<int> data` Represents sorted data
+
+- Return:
+
+	None:
 
 ## Classes <a name="class"></a>
 

@@ -140,25 +140,25 @@ class Flag
 
 	This class is used to return multiple values from the function `partition()` being the partition index and a boolean value representing a flag to identify when the initial bottom of at the data set has been sorted, triggering the start of sorting for the initial top half of the data
 
-- Public member functions:
+- Public Member Functions
 
-	- Constructors:
+	Constructors:
 
 	`Flag(int index, int flag)` Initializes object with values passed in
 
-	- Accessors:
+	Accessors:
 
 	`int get_index()` Returns partition_index
 
 	`int get_flag()` Returns partition_flag
 
-	- Mutators:
+	Mutators:
 
 	`void set_index(int)` Initializes partition_index
 
 	`void set_flag(bool)` Initializes partition_flag
 
-- Private member variables:
+- Private Member Variables
 
 	`int partition_index` Represents where the partitioning takes place
 
@@ -167,4 +167,4 @@ class Flag
 
 ### Resources <a name="resources"></a>
 
-	To learn more about the implementation of this algorithm consider watching this informational [video](https://www.youtube.com/watch?v=7h1s2SojIRw)
+To learn more about the implementation of this algorithm consider watching this informational [video](https://www.youtube.com/watch?v=7h1s2SojIRw)

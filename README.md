@@ -29,7 +29,7 @@ For an in-depth explanation of this algorithmic analysis visit: [opengenus.org](
 
 <img src="output.PNG" width="400" height="300">
 
-### Compile and Execute <a name="exe"></a>
+## Compile and Execute <a name="exe"></a>
 
 - Windows:
 

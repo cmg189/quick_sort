@@ -2,7 +2,7 @@
 
 This repository contains an implementation of the quick sort algorithm in C++
 
-### Table of Contents
+## Table of Contents
 
 1. [Description](#description)
 2. [Program Output](#output)
@@ -11,9 +11,11 @@ This repository contains an implementation of the quick sort algorithm in C++
 5. [Classes](#class)
 6. [Resources](#resources)
 
-### Description <a name="description"></a>
+## Description <a name="description"></a>
 
-Quick sort has been described as a "divide and conquer" algorithm due to splitting up problems into smaller subproblems, then sorting these subproblems. The quick sort algorithm uses two arrays to hold elements less than, and greater than or equal to, the pivot element. These arrays are further broken up into sub-arrays to be sorted and eventually reconstructed together to create the final sorted array. The time complexity is as follows:
+Quick sort has been described as a "divide and conquer" algorithm due to splitting up problems into smaller subproblems, then sorting these subproblems. The quick sort algorithm uses two arrays to hold elements less than, and greater than or equal to, the pivot element. These arrays are further broken up into sub-arrays to be sorted and eventually reconstructed together to create the final sorted array.
+
+The time complexity is as follows:
 
 - Average case: 0(nlogn)
 
@@ -35,14 +37,14 @@ For an in-depth explanation of this algorithmic analysis visit: [opengenus.org](
 
 	To execute run the command: `quick_sort.exe`
 
-- Unix:
+- Linux / Mac OS:
 
 	To compile run the command: `g++ main.cpp -o quick_sort`
 
-	To execute run the command: `./quick_sort.exe`
+	To execute run the command: `./quick_sort`
 
 
-### Function Headers <a name="function"></a>
+## Function Headers <a name="function"></a>
 
 ``` cpp
 vector<int> user_data()
@@ -58,9 +60,9 @@ vector<int> user_data()
 
 - Return:
 
-	`vector<int> data` representing integers to be sorted
+	`vector<int> data` Represents integers to be sorted
 
-
+---
 
 ``` cpp
 vector<int> quick_sort(vector<int> data, int bottom, int top)
@@ -72,16 +74,17 @@ vector<int> quick_sort(vector<int> data, int bottom, int top)
 
 - Parameters:
 
-	- `vector<int> data` Represents unsorted data initialized by user
+	`vector<int> data` Represents unsorted data initialized by user
 
-	- `int bottom` Represents lower bound of vector to be sorted
+	`int bottom` Represents lower bound of vector to be sorted
 
-	- `int top` Represents upper bound of vector to be sorted
+	`int top` Represents upper bound of vector to be sorted
 
 - Return:
 
 	`vector<int> data` Represents the sorted data
 
+---
 
 ``` cpp
 Flag partition(vector<int> &data, int bottom, int top)
@@ -93,18 +96,18 @@ Flag partition(vector<int> &data, int bottom, int top)
 
 - Parameters:
 
-	- `vector<int> &data` Represents a subset of the data to be sorted (passed by reference)
+	`vector<int> &data` Represents a subset of the data to be sorted (passed by reference)
 
-	- `int bottom` Represents lower bound of data to be sorted
+	`int bottom` Represents lower bound of data to be sorted
 
-	- `int top` Represents upper bound of data to be sorted
+	`int top` Represents upper bound of data to be sorted
 
 - Return:
 
 	`Flag control` Object of class Flag containing the sorted subset of the data and a boolean representing a control flag
 
 
-
+---
 
 ``` cpp
 vector<int> swap(vector<int> data, int bottom_compare, int top_compare)
@@ -115,11 +118,11 @@ vector<int> swap(vector<int> data, int bottom_compare, int top_compare)
 
 - Parameters
 
-	- `vector<int> data` Represents the data being sorted
+	`vector<int> data` Represents the data being sorted
 
-	- `int bottom_compare` Represents element to be swapped
+	`int bottom_compare` Represents element to be swapped
 
-	- `int top_compare` Represents element to be swapped
+	`int top_compare` Represents element to be swapped
 
 - Return:
 

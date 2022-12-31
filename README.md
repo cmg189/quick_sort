@@ -144,7 +144,7 @@ void output_data(vector<int> data)
 
 - Return:
 
-	None:
+	None
 
 ## Classes <a name="class"></a>
 
